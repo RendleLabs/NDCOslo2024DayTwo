@@ -1,0 +1,6 @@
+@MusicApi_HostAddress = https://localhost:7042
+
+GET {{MusicApi_HostAddress}}/artists/query/?name=Nirvana
+Accept: application/json
+
+###
