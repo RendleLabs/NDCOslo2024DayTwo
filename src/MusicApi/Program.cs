@@ -78,15 +78,17 @@ app.UseHttpsRedirection();
 app.MapGet("/min/artists/query",
     async ([FromQuery] string name, [FromServices] MusicBrainzClient mbClient) =>
     {
-        if (name is not { Length: > 0 }) return Results.BadRequest();
         var result = await mbClient.QueryArtistAsync(name);
-        if (result?.Artists is not { Length: > 0 }) return Results.Ok(Array.Empty<Artist>());
-        var artists = Mappings.ToModels(result, false, 10);
-        return Results.Ok(artists);
-    })
-    .CacheOutput(policy =>
-    {
-        policy.SetVaryByQuery("name", "skip", "include");
+        return Enumerate(result!);
+
+        static async IAsyncEnumerable<Artist> Enumerate(MbArtistQueryResult qr)
+        {
+            foreach (var mbArtist in qr.Artists ?? [])
+            {
+                var artist = mbArtist.ToModel();
+                yield return artist;
+            }
+        }
     });
 
 app.MapControllers();

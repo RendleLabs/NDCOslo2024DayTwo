@@ -4,3 +4,8 @@ GET {{MusicApi_HostAddress}}/artists/query/?name=Nirvana
 Accept: application/json
 
 ###
+
+GET {{MusicApi_HostAddress}}/min/artists/query/?name=Nirvana
+Accept: application/json
+
+###
