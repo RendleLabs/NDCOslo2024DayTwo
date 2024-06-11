@@ -13,6 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicApi.Tests", "test\Musi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicApi.Models", "src\MusicApi.Models\MusicApi.Models.csproj", "{B497CD8C-CB6C-47A4-8711-520F803450B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicApi.LoadTests", "test\MusicApi.LoadTests\MusicApi.LoadTests.csproj", "{0C91F4DE-6BCC-411A-A1CF-6DD3E836498F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{104B24AD-5FF9-408C-AFED-B6A35B71EED4}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,10 +41,15 @@ Global
 		{B497CD8C-CB6C-47A4-8711-520F803450B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B497CD8C-CB6C-47A4-8711-520F803450B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B497CD8C-CB6C-47A4-8711-520F803450B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C91F4DE-6BCC-411A-A1CF-6DD3E836498F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C91F4DE-6BCC-411A-A1CF-6DD3E836498F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C91F4DE-6BCC-411A-A1CF-6DD3E836498F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C91F4DE-6BCC-411A-A1CF-6DD3E836498F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{13DF106B-F5CA-4421-95C5-FDCA9D8F70E0} = {46FE0DE1-0592-4ADD-A7E5-7C0DA72335DF}
 		{9B721B03-8F94-424B-A460-918337D766E2} = {4F78E334-9621-4E3F-9AB1-C94055C59771}
 		{B497CD8C-CB6C-47A4-8711-520F803450B7} = {46FE0DE1-0592-4ADD-A7E5-7C0DA72335DF}
+		{0C91F4DE-6BCC-411A-A1CF-6DD3E836498F} = {4F78E334-9621-4E3F-9AB1-C94055C59771}
 	EndGlobalSection
 EndGlobal

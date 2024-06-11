@@ -1,6 +1,16 @@
-﻿using MusicApi.Models;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+using MusicApi.Models;
 
 namespace MusicApi.Clients;
+
+[JsonSourceGenerationOptions(JsonSerializerDefaults.Web)]
+[JsonSerializable(typeof(MbArtistQueryResult))]
+[JsonSerializable(typeof(MbReleaseQueryResult))]
+internal partial class MbSerializerContext : JsonSerializerContext
+{
+    
+}
 
 public static class Conversions
 {

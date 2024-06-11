@@ -15,7 +15,7 @@ public class MusicBrainzClient
     {
         name = Uri.EscapeDataString(name);
         var url = $"/ws/2/artist/?query=artist:{name}";
-        var result = await _httpClient.GetFromJsonAsync<MbArtistQueryResult>(url);
+        var result = await _httpClient.GetFromJsonAsync(url, MbSerializerContext.Default.MbArtistQueryResult);
         return result;
     }
 
@@ -26,7 +26,7 @@ public class MusicBrainzClient
         {
             url = $"{url}&offset={offset}";
         }
-        var result = await _httpClient.GetFromJsonAsync<MbReleaseQueryResult>(url);
+        var result = await _httpClient.GetFromJsonAsync(url, MbSerializerContext.Default.MbReleaseQueryResult);
         return result;
     }
 
